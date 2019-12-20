@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UmigameController@index');
+Route::post('/umigame', 'UmigameController@answer')->name('answer');
+Route::get('/result', 'UmigameController@result')->name('result');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
